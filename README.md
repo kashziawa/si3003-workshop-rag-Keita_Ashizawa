@@ -47,3 +47,21 @@ Reemplaza esta tabla con la que genera el botón «Copiar mi progreso en Markdow
 ## Decisiones y aprendizajes
 
 Escribe 5 a 8 líneas sobre lo más importante que descubriste hoy.
+
+## Parte A: App RAG empresarial (Notebook 02b)
+
+### Datos de ejecución:
+- **Número de documentos cargados:** 4
+- **Número de chunks generados (N):** 4
+
+---
+
+### Tarea A1: Prueba con preguntas fuera del contexto y observaciones
+
+**Pregunta fuera de contexto realizada:** `¿Cómo pido vacaciones?`  
+**Respuesta del modelo:** *"No dispongo de esa información en el contexto proporcionado."*
+
+**Análisis y Conclusión:**
+1. **Prevención de Alucinaciones:** El pipeline RAG funcionó de manera óptima y esperada. A pesar de que el modelo de lenguaje posee conocimientos previos generales sobre solicitudes de vacaciones, las instrucciones del *System Prompt* restringieron la generación únicamente al contexto provisto.
+2. **Efectividad del Retriever y Filtros:** La búsqueda en Qdrant (con umbral de similitud `score_threshold: 0.3`) no devolvió ningún fragmento relevante, obligando al modelo a responder de forma concisa que no posee esa información.
+3. **Confiabilidad Empresarial:** El sistema demuestra ser seguro para un entorno empresarial, ya que previene respuestas falsas o no verificadas (alucinaciones) ante consultas sobre temas no documentados.
